@@ -12,14 +12,14 @@ const currentPath = Astro.url.pathname; // current active page
 ---
 
 <header class="bg-gray-900 text-gray-300 w-full">
-  <div class="flex items-center justify-between px-12 h-24 w-full">
+  <div class="flex items-center">
+  <a href="/">
+    <img src="/images/logo.png" alt="Studio Logo" class="h-10 w-auto" />
+  </a>
 
-    <!-- Left: Logo -->
-    <a href="/" class="flex items-center">
-      <Logo />
-    </a>
-<!-- Vertical line -->
-      <div class="h-8 border-l border-gray-400"></div>
+  <!-- Vertical line with left/right spacing -->
+  <div class="h-8 border-l border-white mx-6"></div>
+</div>
     
 <!-- Middle: Nav -->
     <nav class="flex-1 flex justify-center">
