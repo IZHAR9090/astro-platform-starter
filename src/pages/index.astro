@@ -1,21 +1,38 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import ContextAlert from '../components/ContextAlert.astro';
-import Markdown from '../components/Markdown.astro';
-
-const explainer = `
-An Astro website can go way beyond static pages - on the right platform.
-
-Netlify supports not only [Streaming SSR](https://docs.astro.build/en/guides/server-side-rendering/#html-streaming) and fast [Edge Middleware](https://docs.astro.build/en/guides/middleware/), but also [on-demand revalidation](https://www.netlify.com/blog/cache-tags-and-purge-api-on-netlify/) and [stale-while-revalidate](https://www.netlify.com/blog/swr-and-fine-grained-cache-control/). 
-Any page or data can be rebuilt only when needed, without site visitors ever getting a performance hit.
-`;
 ---
 
-<Layout title="Welcome to Astro.">
-    <ContextAlert class="mb-8" />
-    <h1 class="mb-10">Netlify Platform Starter for Astro</h1>
-    <Markdown content={explainer} class="mb-10 text-lg" />
-    <p>
-        <a href="https://docs.netlify.com/frameworks/astro/" class="btn btn-lg sm:min-w-64">Read the Docs</a>
-    </p>
+<Layout title="Welcome to My Portfolio">
+  <section class="flex flex-col items-center gap-8 md:flex-row md:items-start md:gap-12">
+    
+    <!-- Left side: Profile picture -->
+    <div class="flex-shrink-0">
+      <img 
+        src="/images/pic.png" 
+        alt="Izhar Ahmad" 
+        class="w-40 h-40 rounded-full object-cover border-4 border-white shadow-lg"
+      />
+    </div>
+
+    <!-- Right side: Bio -->
+    <div class="max-w-xl text-center md:text-left">
+      <h1 class="text-3xl font-bold mb-4">Hi, I’m Izhar Ahmad 👋</h1>
+      <p class="text-lg leading-relaxed opacity-90">
+        I’m a game developer and software engineer passionate about building 
+        engaging experiences with Unity, multiplayer systems, and modern web tools.  
+        Currently working on <strong>Memory Maze: Time-Bound Puzzle</strong> 
+        and exploring creative ideas for mobile and web projects.
+      </p>
+
+      <!-- Optional button links -->
+      <div class="mt-6 flex flex-wrap gap-4">
+        <a href="/projects" class="px-5 py-2 bg-white text-black rounded-full hover:bg-gray-200">
+          View My Projects
+        </a>
+        <a href="/contact" class="px-5 py-2 border border-white rounded-full hover:bg-white hover:text-black">
+          Contact Me
+        </a>
+      </div>
+    </div>
+  </section>
 </Layout>
