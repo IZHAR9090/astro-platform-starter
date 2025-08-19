@@ -2,79 +2,54 @@
 import Logo from '../components/Logo.astro';
 
 const navItems = [
-    { linkText: 'Home', href: '/' },
-    { linkText: 'My Projects', href: '/projects' },
-    { linkText: 'My SDK', href: '/sdk' },
-    { linkText: 'Contact Me', href: '/contact' }
+  { linkText: 'Home', href: '/' },
+  { linkText: 'My Projects', href: '/projects' },
+  { linkText: 'My SDK', href: '/sdk' },
+  { linkText: 'Contact Me', href: '/contact' }
 ];
 
-const platformIcons = [
-  { name: 'Unity', svg: '/images/unity.svg', href: '' },
-  { name: 'Android', svg: '/images/android.svg', href: '' },
-  { name: 'Xcode', svg: '/images/xcode.svg', href: '' }
-];
+const currentPath = Astro.url.pathname; // current active page
 ---
 
 <header class="bg-gray-900 text-gray-300 w-full">
   <div class="flex items-center justify-between px-12 h-24 w-full">
-    
+
     <!-- Left: Logo -->
     <a href="/" class="flex items-center">
       <Logo />
     </a>
 
-    <!-- Middle: Nav Items -->
+    <!-- Middle: Nav -->
     <nav class="flex-1 flex justify-center">
-  <ul class="flex space-x-20 text-lg font-medium">
-    <li>
-      <a href="/" class="hover:text-white no-underline">
-        Home
-      </a>
-    </li>
-    <li>
-      <a href="/projects" class="hover:text-white no-underline">
-        My Projects
-      </a>
-    </li>
-    <li>
-      <a href="/sdk" class="hover:text-white no-underline">
-        My SDK
-      </a>
-    </li>
-    <li>
-      <a href="/contact" class="hover:text-white no-underline">
-        Contact Me
-      </a>
-    </li>
-  </ul>
-</nav>
-
+      <ul class="flex space-x-20 text-lg font-medium">
+        {navItems.map((item) => (
+          <li>
+            <a
+              href={item.href}
+              class={`px-2 py-1 transition-colors 
+                ${currentPath === item.href 
+                  ? "text-white border-b-2 border-white pb-1" 
+                  : "hover:text-white"
+                }`}
+            >
+              {item.linkText}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
 
     <!-- Right: Icons -->
     <div class="flex space-x-6">
-  <a href="">
-    <img 
-      src="/images/unity.svg" 
-      alt="Unity" 
-      class="h-8 w-8 opacity-80 hover:opacity-100 transition filter invert" 
-    />
-  </a>
-  <a href="">
-    <img 
-      src="/images/android.svg" 
-      alt="Android" 
-      class="h-8 w-8 opacity-80 hover:opacity-100 transition filter invert" 
-    />
-  </a>
-  <a href="">
-    <img 
-      src="/images/xcode.svg" 
-      alt="Xcode" 
-      class="h-8 w-8 opacity-80 hover:opacity-100 transition filter invert" 
-    />
-  </a>
-</div>
-
+      <a href="">
+        <img src="/images/unity.svg" alt="Unity" class="h-6 w-6 opacity-80 hover:opacity-100 transition filter invert" />
+      </a>
+      <a href="">
+        <img src="/images/android.svg" alt="Android" class="h-6 w-6 opacity-80 hover:opacity-100 transition filter invert" />
+      </a>
+      <a href="">
+        <img src="/images/xcode.svg" alt="Xcode" class="h-6 w-6 opacity-80 hover:opacity-100 transition filter invert" />
+      </a>
+    </div>
   </div>
 </header>
-
