@@ -1,27 +1,22 @@
 ---
 import Logo from '../components/Logo.astro';
 
-// Navigation items
 const navItems = [
     { linkText: 'Home', href: '/' },
-    { linkText: 'Our Games', href: '/games' },
-    { linkText: 'Our Studio', href: '/studio' },
-    { linkText: 'Shop', href: '/shop' },
-    { linkText: 'Blog', href: '/blog' },
-    { linkText: 'Contact', href: '/contact' }
+    { linkText: 'My Projects', href: '/projects' },
+    { linkText: 'My SDK', href: '/sdk' },
+    { linkText: 'Contact Me', href: '/contact' }
 ];
 
-// Platform icons (SVGs or icon components)
 const platformIcons = [
-    { name: 'Xbox', svg: '/icons/xbox.svg', href: '#' },
-    { name: 'PlayStation', svg: '/icons/playstation.svg', href: '#' },
-    { name: 'Windows', svg: '/icons/windows.svg', href: '#' },
-    { name: 'Steam', svg: '/icons/steam.svg', href: '#' }
+    { name: 'GitHub', svg: '/icons/github.svg', href: 'https://github.com/yourprofile' },
+    { name: 'LinkedIn', svg: '/icons/linkedin.svg', href: 'https://linkedin.com/in/yourprofile' },
 ];
 ---
 
-<header class="bg-gray-900 text-gray-300">
-  <div class="max-w-7xl mx-auto px-6 flex items-center justify-between h-16">
+<header class="bg-gray-900 text-gray-300 w-full">
+  <div class="w-full px-8 flex items-center justify-between h-24"> 
+    <!-- ↑ h-24 makes it taller (96px). You can tweak: h-20, h-28 etc. -->
     
     <!-- Left: Logo -->
     <a href="/" class="flex items-center">
@@ -29,8 +24,8 @@ const platformIcons = [
     </a>
 
     <!-- Middle: Nav Items -->
-    <nav>
-      <ul class="hidden md:flex space-x-6 text-sm font-medium">
+    <nav class="flex-1 flex justify-center">
+      <ul class="flex space-x-10 text-lg font-medium">
         {navItems.map((item) => (
           <li>
             <a 
@@ -44,11 +39,11 @@ const platformIcons = [
       </ul>
     </nav>
 
-    <!-- Right: Platform Icons -->
-    <div class="hidden md:flex space-x-4">
+    <!-- Right: Icons -->
+    <div class="flex space-x-5">
       {platformIcons.map((icon) => (
-        <a href={icon.href} aria-label={icon.name}>
-          <img src={icon.svg} alt={icon.name} class="h-5 w-5 opacity-70 hover:opacity-100 transition" />
+        <a href={icon.href} target="_blank" rel="noopener noreferrer" aria-label={icon.name}>
+          <img src={icon.svg} alt={icon.name} class="h-6 w-6 opacity-70 hover:opacity-100 transition" />
         </a>
       ))}
     </div>
