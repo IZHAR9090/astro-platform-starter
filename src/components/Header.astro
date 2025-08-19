@@ -21,23 +21,24 @@ const currentPath = Astro.url.pathname; // current active page
 
     <!-- Middle: Nav -->
     <nav class="flex-1 flex justify-center">
-      <ul class="flex space-x-20 text-lg font-medium">
-        {navItems.map((item) => (
-          <li>
-            <a
-              href={item.href}
-              class={`px-2 py-1 transition-colors 
-                ${currentPath === item.href 
-                  ? "text-white border-b-2 border-white pb-1" 
-                  : "hover:text-white"
-                }`}
-            >
-              {item.linkText}
-            </a>
-          </li>
-        ))}
-      </ul>
-    </nav>
+  <ul class="flex space-x-20 text-lg font-medium">
+    {navItems.map((item) => (
+      <li>
+        <a
+          href={item.href}
+          class={`px-2 py-1 no-underline transition-colors 
+            ${currentPath === item.href 
+              ? "text-white border-b-2 border-white pb-1" 
+              : "hover:text-white"
+            }`}
+        >
+          {item.linkText}
+        </a>
+      </li>
+    ))}
+  </ul>
+</nav>
+
 
     <!-- Right: Icons -->
     <div class="flex space-x-6">
