@@ -18,8 +18,10 @@ const currentPath = Astro.url.pathname; // current active page
     <a href="/" class="flex items-center">
       <Logo />
     </a>
-
-    <!-- Middle: Nav -->
+<!-- Vertical line -->
+      <div class="h-8 border-l border-gray-400"></div>
+    </div>
+<!-- Middle: Nav -->
     <nav class="flex-1 flex justify-center">
   <ul class="flex space-x-20 text-lg font-medium">
     {navItems.map((item) => (
