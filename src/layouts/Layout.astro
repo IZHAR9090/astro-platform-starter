@@ -22,10 +22,11 @@ const { title } = Astro.props;
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <link rel="preload" as="font" type="font/woff2" href={interWoff2} crossorigin />
     </head>
-    <body class="antialiased text-white bg-complementary">
-        <div class="flex flex-col min-h-screen bg-noise">
+    <!-- 🎮 Gaming style background gradient -->
+    <body class="antialiased text-white bg-gradient-to-br from-purple-900 via-black to-indigo-900">
+        <div class="flex flex-col min-h-screen">
             
-            <!-- ✅ Full-width header outside container -->
+            <!-- ✅ Full-width header -->
             <Header />
 
             <!-- Constrained main + footer -->
