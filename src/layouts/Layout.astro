@@ -33,9 +33,10 @@ const { title } = Astro.props;
 
             <!-- Constrained main + footer -->
 <div class="flex flex-col w-full grow px-6 sm:px-12">
-                <main class="grow"><slot /></main>
-                <Footer />
-            </div>
+    <main class="grow"><slot /></main>
+</div>
+
+<Footer />
         </div>
     </body>
 </html>
