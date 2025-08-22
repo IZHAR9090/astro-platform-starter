@@ -12,14 +12,14 @@ import Layout from '../layouts/Layout.astro';
     </h1>
 
     <!-- Typewriter effect -->
-    <p class="text-xl md:text-2xl font-mono text-gray-300 h-10">
-      <span id="typewriter"></span>
-    </p>
+    <p class="text-lg md:text-xl font-mono text-gray-300 max-w-2xl leading-relaxed">
+  <span id="typewriter"></span>
+</p>
 
     <!-- Call to Action Button -->
     <div class="pt-6">
-      <a href="/projects" class="px-6 py-3 text-lg font-semibold bg-pink-500 text-white rounded-full hover:bg-pink-400 transition">
-        Explore My Work
+      <a href="/IZHAR AHMAD Resume.pdf" class="px-6 py-3 text-lg font-semibold bg-pink-500 text-white rounded-full hover:bg-pink-400 transition no-underline">
+        Download My Reume
       </a>
     </div>
   </div>
@@ -37,30 +37,15 @@ import Layout from '../layouts/Layout.astro';
 
 <!-- Typewriter Script -->
 <script>
-  const words = ["Game Developer 🎮", "Software Engineer 💻", "Unity & Multiplayer Enthusiast 🌐"];
+  const text = "Unity Game Developer with 3 years of experience creating hyper-casual, multiplayer, and simulation games. I specialize in building engaging gameplay systems, optimizing performance, and integrating monetization solutions like AdMob and in-app purchases. Passionate about game design and innovation, I love turning creative ideas into interactive experiences.";
+  
   let i = 0;
-  let j = 0;
-  let currentWord = "";
-  let isDeleting = false;
-  const speed = 100;
-  const delay = 2000;
+  const speed = 40; // typing speed (ms)
 
   function type() {
-    currentWord = words[i];
-    document.getElementById("typewriter").textContent = currentWord.substring(0, j);
-
-    if (!isDeleting && j < currentWord.length) {
-      j++;
-      setTimeout(type, speed);
-    } else if (isDeleting && j > 0) {
-      j--;
-      setTimeout(type, speed / 2);
-    } else if (!isDeleting && j === currentWord.length) {
-      isDeleting = true;
-      setTimeout(type, delay);
-    } else if (isDeleting && j === 0) {
-      isDeleting = false;
-      i = (i + 1) % words.length;
+    if (i < text.length) {
+      document.getElementById("typewriter").textContent += text.charAt(i);
+      i++;
       setTimeout(type, speed);
     }
   }
