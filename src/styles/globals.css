@@ -75,7 +75,8 @@
         --btn-px: 1.5rem;
         --btn-py: 1.125rem;
     }
-    .bg-rgb {
+   /* 🔥 RGB Animated Gradient Background */
+.bg-rgb {
   background: linear-gradient(-45deg, 
     #ff0000,   /* Red */
     #00ff00,   /* Green */
@@ -94,6 +95,35 @@
   75%  { background-position: 50% 0%; }
   100% { background-position: 0% 50%; }
 }
+
+/* ✨ Neon Glow for Text */
+.neon-text {
+  text-shadow: 
+    0 0 5px #fff,
+    0 0 10px #0ff,
+    0 0 20px #0ff,
+    0 0 40px #0ff;
+}
+
+/* 🎮 Neon Button */
+.neon-button {
+  background: transparent;
+  border: 2px solid #0ff;
+  color: #0ff;
+  padding: 0.75rem 1.5rem;
+  border-radius: 9999px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  text-decoration: none; /* ✅ underline remove */
+  box-shadow: 0 0 5px #0ff, 0 0 20px #0ff inset;
+}
+
+.neon-button:hover {
+  background: #0ff;
+  color: #000;
+  box-shadow: 0 0 20px #0ff, 0 0 40px #0ff inset;
+}
+
 
 
 }
