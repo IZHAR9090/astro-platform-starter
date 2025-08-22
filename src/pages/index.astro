@@ -3,30 +3,30 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout title="Welcome to My Portfolio">
-<section class="relative flex flex-col-reverse md:flex-row items-center justify-center text-center md:text-center py-16 px-6 md:px-16">
-  
+<section class="relative flex flex-col-reverse md:flex-row items-center justify-center text-center py-16 px-6 md:px-16 max-w-6xl mx-auto">
+
   <!-- Left: Text content -->
-  <div class="md:w-1/2 space-y-6">
+  <div class="md:w-1/2 space-y-6 flex flex-col items-center md:items-start">
     <h1 class="text-4xl md:text-6xl font-extrabold text-white">
       Hi, I’m <span class="text-cyan-400">Izhar Ahmad</span> 👋
     </h1>
 
     <!-- Typewriter effect -->
-    <p class="text-lg md:text-xl font-mono text-gray-300 max-w-2xl leading-relaxed text-justify"">
-  Unity Game Developer with 3 years of experience creating hyper-casual, multiplayer, and simulation games. 
-  I specialize in building engaging gameplay systems, optimizing performance, and integrating monetization 
-  solutions like AdMob and in-app purchases. Passionate about game design and innovation, I love turning 
-  creative ideas into interactive experiences.
-</p>
+    <p class="text-lg md:text-xl font-mono text-gray-300 max-w-2xl leading-relaxed text-center md:text-justify">
+      Unity Game Developer with 3 years of experience creating hyper-casual, multiplayer, and simulation games. 
+      I specialize in building engaging gameplay systems, optimizing performance, and integrating monetization 
+      solutions like AdMob and in-app purchases. Passionate about game design and innovation, I love turning 
+      creative ideas into interactive experiences.
+    </p>
 
     <!-- Call to Action Button -->
     <div class="pt-6">
-  <a href="/IZHAR AHMAD Resume.pdf" 
-     download 
-     class="px-6 py-3 text-lg font-semibold bg-pink-500 text-white rounded-full hover:bg-pink-400 transition no-underline">
-    Download My Resume
-  </a>
-</div>
+      <a href="/IZHAR AHMAD Resume.pdf" 
+         download 
+         class="px-6 py-3 text-lg font-semibold bg-pink-500 text-white rounded-full hover:bg-pink-400 transition no-underline">
+        Download My Resume
+      </a>
+    </div>
   </div>
 
   <!-- Right: Profile Picture -->
@@ -38,6 +38,7 @@ import Layout from '../layouts/Layout.astro';
     />
   </div>
 </section>
+
 
 
 <!-- Typewriter Script -->
