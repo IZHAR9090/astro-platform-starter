@@ -1,0 +1,41 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="SDKs">
+  <section class="min-h-screen py-16 px-6 sm:px-12 text-center">
+    <h1 class="text-5xl font-extrabold text-gradient mb-10">
+      Software Development Kits (SDKs)
+    </h1>
+
+    <p class="text-lg text-gray-300 max-w-3xl mx-auto mb-16">
+      Here are the SDKs I have worked with and developed expertise in.  
+      From game engines to mobile platforms, I have hands-on experience.
+    </p>
+
+    <!-- SDK Cards -->
+    <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+      
+      <!-- Unity -->
+      <div class="p-6 rounded-2xl bg-gray-900 shadow-lg hover:shadow-pink-500/40 transition">
+        <img src="/images/unity.svg" alt="Unity" class="h-16 w-16 mx-auto mb-4 filter invert" />
+        <h3 class="text-xl font-semibold mb-2">Unity SDK</h3>
+        <p class="text-gray-400 text-sm">Developed multiple 2D/3D games and multiplayer systems using Unity Engine.</p>
+      </div>
+
+      <!-- Android -->
+      <div class="p-6 rounded-2xl bg-gray-900 shadow-lg hover:shadow-green-500/40 transition">
+        <img src="/images/android.svg" alt="Android" class="h-16 w-16 mx-auto mb-4 filter invert" />
+        <h3 class="text-xl font-semibold mb-2">Android SDK</h3>
+        <p class="text-gray-400 text-sm">Experience in Android app development, integrations, and publishing workflows.</p>
+      </div>
+
+      <!-- iOS -->
+      <div class="p-6 rounded-2xl bg-gray-900 shadow-lg hover:shadow-blue-500/40 transition">
+        <img src="/images/xcode.svg" alt="Xcode" class="h-16 w-16 mx-auto mb-4 filter invert" />
+        <h3 class="text-xl font-semibold mb-2">iOS SDK</h3>
+        <p class="text-gray-400 text-sm">Worked with Xcode & iOS SDKs for building and deploying iPhone/iPad apps.</p>
+      </div>
+    </div>
+  </section>
+</Layout>
