@@ -1,0 +1,117 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+// ✅ Update these with your real data
+const projects = [
+  { title: 'EProject 1', youtubeId: 'YT_ID_1', webgl: '/webgl/eproject1/', android: '/apk/eproject1.apk', blurb: 'Fast-paced arcade prototype with polished VFX and mobile UI.', tags: ['Unity','Mobile','WebGL'] },
+  { title: 'EProject 2', youtubeId: 'YT_ID_2', webgl: '/webgl/eproject2/', android: '/apk/eproject2.apk', blurb: 'Endless runner with procedural tracks and rewarded ads.', tags: ['Unity','Procedural','Ads'] },
+  { title: 'EProject 3', youtubeId: 'YT_ID_3', webgl: '/webgl/eproject3/', android: '/apk/eproject3.apk', blurb: 'Top-down shooter with pooling & custom input.', tags: ['Unity','Shooter','Mobile'] },
+  { title: 'EProject 4', youtubeId: 'YT_ID_4', webgl: '/webgl/eproject4/', android: '/apk/eproject4.apk', blurb: 'Puzzle platformer with tight 2D controls.', tags: ['Unity','2D','Platformer'] },
+  { title: 'EProject 5', youtubeId: 'YT_ID_5', webgl: '/webgl/eproject5/', android: '/apk/eproject5.apk', blurb: 'Idle game with offline progression & analytics.', tags: ['Unity','Idle','Analytics'] },
+  { title: 'EProject 6', youtubeId: 'YT_ID_6', webgl: '/webgl/eproject6/', android: '/apk/eproject6.apk', blurb: 'Hyper-casual one-tap gameplay.', tags: ['Unity','Hyper-casual','Mobile'] },
+  { title: 'EProject 7', youtubeId: 'YT_ID_7', webgl: '/webgl/eproject7/', android: '/apk/eproject7.apk', blurb: '3D endless flyer with post-processing.', tags: ['Unity','3D','PostFX'] },
+  { title: 'EProject 8', youtubeId: 'YT_ID_8', webgl: '/webgl/eproject8/', android: '/apk/eproject8.apk', blurb: 'Runner + rhythm; beat-synced obstacles.', tags: ['Unity','Rhythm','Runner'] },
+  { title: 'EProject 9', youtubeId: 'YT_ID_9', webgl: '/webgl/eproject9/', android: '/apk/eproject9.apk', blurb: 'Arcade driving with ghost replays.', tags: ['Unity','Racing','Replay'] },
+  { title: 'EProject 10', youtubeId: 'YT_ID_10', webgl: '/webgl/eproject10/', android: '/apk/eproject10.apk', blurb: 'Boss-rush combat demo with SFX.', tags: ['Unity','Combat','SFX'] },
+];
+
+const ytThumb = (id: string | undefined) =>
+  id ? `https://img.youtube.com/vi/${id}/hqdefault.jpg` : '';
+---
+
+<Layout title="My Projects">
+  <!-- ===== Hero ===== -->
+  <section class="py-12 lg:py-16 px-6 sm:px-12 text-center">
+    <h1 class="text-5xl font-extrabold text-gradient mb-4">My Projects</h1>
+    <p class="text-lg text-gray-300 max-w-3xl mx-auto">
+      A selection of prototypes & shipped builds—watch the video, try the WebGL, or download Android.
+    </p>
+  </section>
+
+  <!-- ===== Grid ===== -->
+  <section class="px-6 sm:px-12 pb-20">
+    <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+      {projects.map((p, idx) => (
+        <article
+          class="group relative overflow-hidden rounded-2xl bg-gray-900 border border-white/10 shadow-lg
+                 hover:border-fuchsia-400/40 hover:shadow-fuchsia-500/20 transition"
+        >
+          <!-- Thumbnail / Banner -->
+          <a href={p.youtubeId ? `https://www.youtube.com/watch?v=${p.youtubeId}` : '#'} target="_blank" rel="noopener"
+             class="relative block aspect-[16/9] w-full overflow-hidden">
+            {ytThumb(p.youtubeId)
+              ? (
+                <img
+                  src={ytThumb(p.youtubeId)}
+                  alt={`${p.title} — YouTube thumbnail`}
+                  loading="lazy"
+                  class="h-full w-full object-cover transition duration-300 group-hover:scale-[1.03]"
+                />
+              ) : (
+                <div class="h-full w-full bg-gradient-to-br from-fuchsia-600/30 via-indigo-600/30 to-cyan-600/30"></div>
+              )
+            }
+            <!-- Soft overlay + play triangle (no red button) -->
+            <div class="pointer-events-none absolute inset-0 bg-black/0 group-hover:bg-black/10 transition"></div>
+            <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
+              <svg viewBox="0 0 24 24" class="w-12 h-12" fill="currentColor">
+                <path d="M9 7v10l8-5-8-5z" />
+              </svg>
+            </div>
+            <!-- Badge -->
+            <span class="absolute top-3 left-3 text-xs px-2 py-1 rounded-full bg-black/50 text-white/80 ring-1 ring-white/10">
+              #{String(idx + 1).padStart(2,'0')}
+            </span>
+          </a>
+
+          <!-- Content -->
+          <div class="p-6">
+            <h3 class="text-xl font-semibold text-white">{p.title}</h3>
+            <p class="mt-2 text-sm text-gray-300">{p.blurb}</p>
+
+            <!-- Tags -->
+            <div class="mt-4 flex flex-wrap gap-2">
+              {p.tags.map(tag => (
+                <span class="px-3 py-1 rounded-full text-xs bg-white/5 text-white/80 ring-1 ring-white/10">{tag}</span>
+              ))}
+            </div>
+
+            <!-- Actions -->
+            <div class="mt-6 flex flex-wrap gap-3">
+              <!-- WebGL (Primary) -->
+              <a href={p.webgl} target="_blank" rel="noopener"
+                 class="no-underline inline-flex items-center gap-2 rounded-xl px-4 py-2 font-semibold text-black
+                        bg-gradient-to-r from-fuchsia-400 to-cyan-300 hover:from-fuchsia-300 hover:to-cyan-200
+                        transition shadow-lg shadow-fuchsia-500/20">
+                <svg viewBox="0 0 24 24" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M8 5v14l11-7-11-7z" />
+                </svg>
+                Play WebGL
+              </a>
+
+              <!-- Android -->
+              <a href={p.android} target="_blank" rel="noopener"
+                 class="no-underline inline-flex items-center gap-2 rounded-xl px-4 py-2 font-semibold text-white/90
+                        bg-white/5 hover:bg-white/10 ring-1 ring-white/10 transition">
+                <svg viewBox="0 0 24 24" class="w-5 h-5" fill="currentColor" aria-hidden="true">
+                  <path d="M17.6 9l1.4-2.4-.9-.5-1.5 2.6a7.5 7.5 0 00-7.2 0L6.9 6.1l-.9.5L7.4 9H17.6zM7 10h10v8a2 2 0 01-2 2H9a2 2 0 01-2-2v-8zM8 3l1.5 2.6M16 3L14.5 5.6" />
+                </svg>
+                Android
+              </a>
+
+              <!-- YouTube -->
+              <a href={p.youtubeId ? `https://www.youtube.com/watch?v=${p.youtubeId}` : '#'} target="_blank" rel="noopener"
+                 class="no-underline inline-flex items-center gap-2 rounded-xl px-4 py-2 font-semibold text-white/90
+                        bg-white/5 hover:bg-white/10 ring-1 ring-white/10 transition">
+                <svg viewBox="0 0 24 24" class="w-5 h-5" fill="currentColor" aria-hidden="true">
+                  <path d="M10 8l6 4-6 4V8z" />
+                </svg>
+                Watch on YouTube
+              </a>
+            </div>
+          </div>
+        </article>
+      ))}
+    </div>
+  </section>
+</Layout>
