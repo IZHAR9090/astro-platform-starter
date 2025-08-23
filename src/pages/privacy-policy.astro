@@ -1,19 +1,38 @@
 ---
-import Head from 'astro/head';
+/**
+ * Privacy Policy — GameDev Arena (Astro page)
+ * Place this file at: src/pages/privacy-policy.astro
+ * Update: email/URL and "updated" date as needed.
+ */
 const updated = "August 23, 2025";
 const title = "Privacy Policy — GameDev Arena";
-const description = "Privacy Policy for GameDev Arena covering website and games with child-appropriate ads (non-personalized), cookies/SDKs, analytics, and user rights.";
+const description =
+  "Privacy Policy for GameDev Arena covering website and games with child-appropriate (non-personalized) ads, cookies/SDKs, analytics, and user rights.";
+const canonical = "https://www.gamedevarena.com/privacy-policy";
+const year = new Date().getFullYear();
 ---
 
 <html lang="en">
   <head>
-    <Head>
-      <meta charset="utf-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1" />
-      <title>{title}</title>
-      <meta name="description" content={description} />
-      <meta name="robots" content="index,follow" />
-    </Head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="robots" content="index,follow" />
+    <link rel="canonical" href={canonical} />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+
     <style>
       :root {
         --ink: #0a0f1f;
@@ -22,21 +41,39 @@ const description = "Privacy Policy for GameDev Arena covering website and games
         --panel: #ffffff;
         --muted: #64748b;
       }
+      * { box-sizing: border-box; }
       html, body { margin: 0; padding: 0; }
-      body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial, sans-serif; color: var(--ink); background: var(--bg); line-height: 1.7; }
+      body {
+        font-family: system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial, sans-serif;
+        color: var(--ink);
+        background: var(--bg);
+        line-height: 1.7;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
       header { background: var(--ink); color: #fff; padding: 56px 20px; }
-      header .wrap, main .wrap { max-width: 920px; margin: 0 auto; }
+      header .wrap, main .wrap, footer .wrap { max-width: 920px; margin: 0 auto; }
       h1, h2, h3 { color: var(--ink); }
-      h1 { margin: 0 0 8px; }
+      h1 { margin: 0 0 8px; font-weight: 800; letter-spacing: -0.02em; }
       .meta { color: #cbd5e1; }
       main { background: var(--panel); padding: 28px 20px 64px; }
-      a { color: var(--accent); }
-      ul { padding-left: 1.2rem; }
-      .note { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 12px 14px; border-radius: 8px; }
-      footer { color: var(--muted); text-align: center; padding: 28px 0 56px; }
-      code, .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; }
+      a { color: var(--accent); text-decoration: none; }
+      a:hover { text-decoration: underline; }
+      ul { padding-left: 1.2rem; margin: 0.25rem 0 1rem; }
+      .note {
+        background: #f0fdf4;
+        border-left: 4px solid #16a34a;
+        padding: 12px 14px;
+        border-radius: 8px;
+      }
+      code, .mono {
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      }
+      footer { color: var(--muted); text-align: center; padding: 28px 20px 56px; }
+      .section + .section { margin-top: 2rem; }
     </style>
   </head>
+
   <body>
     <header>
       <div class="wrap">
@@ -47,92 +84,132 @@ const description = "Privacy Policy for GameDev Arena covering website and games
 
     <main>
       <div class="wrap">
-        <p>
-          At <strong>GameDev Arena</strong> (“we”, “our”, “us”), we respect your privacy and are committed to protecting your personal data.
-          This Policy explains how we collect, use, and safeguard information on our <strong>website</strong> and in our <strong>games</strong>.
-        </p>
+        <section class="section">
+          <p>
+            At <strong>GameDev Arena</strong> (“we”, “our”, “us”), we respect your privacy and are committed to protecting your personal data.
+            This Policy explains how we collect, use, and safeguard information on our <strong>website</strong> and in our <strong>games</strong>.
+          </p>
+        </section>
 
-        <h2>1) Scope</h2>
-        <p>This Policy applies to our public website, email communications, and games we publish. By using our services, you agree to these practices.</p>
+        <section class="section">
+          <h2>1) Scope</h2>
+          <p>This Policy applies to our public website, email communications, and games we publish. By using our services, you agree to these practices.</p>
+        </section>
 
-        <h2>2) Information We Collect</h2>
-        <ul>
-          <li><strong>Personal information you provide</strong> — e.g., name and email address (contact forms, newsletters, or support).</li>
-          <li><strong>Usage data</strong> — device and log info (IP, device IDs, browser type, pages/screens viewed, session duration) via cookies (website) and SDKs (games).</li>
-          <li><strong>Payment information</strong> — if applicable, processed by trusted payment processors; we do not store full card details.</li>
-        </ul>
+        <section class="section">
+          <h2>2) Information We Collect</h2>
+          <ul>
+            <li><strong>Personal information you provide</strong> — e.g., name and email address (contact forms, newsletters, or support).</li>
+            <li><strong>Usage data</strong> — device and log info (IP, device IDs, browser type, pages/screens viewed, session duration) via cookies (website) and SDKs (games).</li>
+            <li><strong>Payment information</strong> — if applicable, processed by trusted payment processors; we do not store full card details.</li>
+          </ul>
+        </section>
 
-        <h2>3) Advertising &amp; Analytics</h2>
-        <p>We show ads on our website and inside our games and use analytics to improve our products. Our primary partners may include (non-exhaustive):</p>
-        <ul>
-          <li><strong>Google AdMob / AdSense</strong> (ads in games and on the website)</li>
-          <li><strong>Google Analytics</strong> (website analytics)</li>
-        </ul>
-        <p>These partners may collect or receive information such as device identifiers, approximate location, and usage data to serve ads, measure performance, and detect fraud. Where required, we request your consent before using cookies/SDKs or serving personalized ads.</p>
+        <section class="section">
+          <h2>3) Advertising &amp; Analytics</h2>
+          <p>We show ads on our website and inside our games and use analytics to improve our products. Our primary partners may include (non-exhaustive):</p>
+          <ul>
+            <li><strong>Google AdMob / AdSense</strong> (ads in games and on the website)</li>
+            <li><strong>Google Analytics</strong> (website analytics)</li>
+          </ul>
+          <p>These partners may collect or receive information such as device identifiers, approximate location, and usage data to serve ads, measure performance, and detect fraud. Where required, we request your consent before using cookies/SDKs or serving personalized ads.</p>
 
-        <h3>Non‑Personalized &amp; Child‑Appropriate Ads</h3>
-        <ul>
-          <li>For users identified as children, we request <strong>non‑personalized, age‑appropriate ads</strong> and limit data processing.</li>
-          <li>We configure our ad partners to disable personalized advertising and interest-based audiences for child users.</li>
-          <li>Parents/guardians can contact us to request deletion of a child’s personal information (see Section 10).</li>
-        </ul>
+          <h3>Non-Personalized &amp; Child-Appropriate Ads</h3>
+          <ul>
+            <li>For users identified as children, we request <strong>non-personalized, age-appropriate ads</strong> and limit data processing.</li>
+            <li>We configure our ad partners to disable personalized advertising and interest-based audiences for child users.</li>
+            <li>Parents/guardians can contact us to request deletion of a child’s personal information (see Section 10).</li>
+          </ul>
+        </section>
 
-        <h2>4) Children’s Privacy</h2>
-        <p>Our content is suitable for children; however, we do not knowingly collect personal information from children without appropriate consent where required by law.
-           If you are a parent or guardian and believe your child provided personal information to us, please contact us and we will promptly take appropriate action.</p>
-        <div class="note">
-          <p><strong>Compliance:</strong> We aim to comply with child privacy regulations such as the U.S. <span class="mono">COPPA</span> and EU/UK child data protection rules by using age screens where appropriate, limiting data collection, and serving non‑personalized ads to child users.</p>
-        </div>
+        <section class="section">
+          <h2>4) Children’s Privacy</h2>
+          <p>
+            Our content is suitable for children; however, we do not knowingly collect personal information from children without appropriate consent where required by law.
+            If you are a parent or guardian and believe your child provided personal information to us, please contact us and we will promptly take appropriate action.
+          </p>
+          <div class="note">
+            <p><strong>Compliance:</strong> We aim to comply with child privacy regulations such as the U.S. <span class="mono">COPPA</span> and EU/UK child data protection rules by using age screens where appropriate, limiting data collection, and serving non-personalized ads to child users.</p>
+          </div>
+        </section>
 
-        <h2>5) Cookies &amp; SDKs</h2>
-        <p>On the website, we use cookies and similar technologies for functionality, analytics, and advertising.
-           In games, our SDKs (e.g., AdMob) may use device identifiers to show ads, cap frequency, and fight fraud.
-           You can manage cookies through your browser settings and limit ad tracking in your device settings.</p>
+        <section class="section">
+          <h2>5) Cookies &amp; SDKs</h2>
+          <p>
+            On the website, we use cookies and similar technologies for functionality, analytics, and advertising.
+            In games, our SDKs (e.g., AdMob) may use device identifiers to show ads, cap frequency, and fight fraud.
+            You can manage cookies through your browser settings and limit ad tracking in your device settings.
+          </p>
+        </section>
 
-        <h2>6) How We Use Information</h2>
-        <ul>
-          <li>Provide, maintain, and improve our website and games</li>
-          <li>Serve and measure ads (with your consent where required)</li>
-          <li>Respond to support requests and communicate updates</li>
-          <li>Detect, prevent, and address technical issues and abuse</li>
-        </ul>
+        <section class="section">
+          <h2>6) How We Use Information</h2>
+          <ul>
+            <li>Provide, maintain, and improve our website and games</li>
+            <li>Serve and measure ads (with your consent where required)</li>
+            <li>Respond to support requests and communicate updates</li>
+            <li>Detect, prevent, and address technical issues and abuse</li>
+          </ul>
+        </section>
 
-        <h2>7) Legal Bases (GDPR/EEA/UK)</h2>
-        <p>Where applicable, we rely on consent (for cookies/personalized ads), legitimate interests (to improve services and prevent fraud), and performance of a contract (to provide requested services).</p>
+        <section class="section">
+          <h2>7) Legal Bases (GDPR/EEA/UK)</h2>
+          <p>Where applicable, we rely on consent (for cookies/personalized ads), legitimate interests (to improve services and prevent fraud), and performance of a contract (to provide requested services).</p>
+        </section>
 
-        <h2>8) Your Choices</h2>
-        <ul>
-          <li><strong>Consent Management:</strong> Use our cookie/consent banner on the website to choose preferences.</li>
-          <li><strong>Device Controls:</strong> On iOS/Android, you can reset/limit the advertising identifier and switch off interest-based ads.</li>
-          <li><strong>Google Ads Settings:</strong> Manage ad personalization at <span class="mono">adssettings.google.com</span>.</li>
-          <li><strong>Email:</strong> Unsubscribe from newsletters using the link in our emails.</li>
-        </ul>
+        <section class="section">
+          <h2>8) Your Choices</h2>
+          <ul>
+            <li><strong>Consent Management:</strong> Use our cookie/consent banner on the website to choose preferences.</li>
+            <li><strong>Device Controls:</strong> On iOS/Android, you can reset/limit the advertising identifier and switch off interest-based ads.</li>
+            <li><strong>Google Ads Settings:</strong> Manage ad personalization at <span class="mono">adssettings.google.com</span>.</li>
+            <li><strong>Email:</strong> Unsubscribe from newsletters using the link in our emails.</li>
+          </ul>
+        </section>
 
-        <h2>9) Data Retention &amp; Security</h2>
-        <p>We retain personal data only as long as necessary for the purposes described in this Policy and as required by law.
-           We use administrative, technical, and physical safeguards to protect information; however, no method is completely secure.</p>
+        <section class="section">
+          <h2>9) Data Retention &amp; Security</h2>
+          <p>
+            We retain personal data only as long as necessary for the purposes described in this Policy and as required by law.
+            We use administrative, technical, and physical safeguards to protect information; however, no method is completely secure.
+          </p>
+        </section>
 
-        <h2>10) Your Rights</h2>
-        <p>Depending on your region, you may have rights to access, correct, delete, or restrict processing of your personal information, and to withdraw consent.
-           To exercise these rights (including requests concerning a child’s data), contact us using the details below.</p>
+        <section class="section">
+          <h2>10) Your Rights</h2>
+          <p>
+            Depending on your region, you may have rights to access, correct, delete, or restrict processing of your personal information, and to withdraw consent.
+            To exercise these rights (including requests concerning a child’s data), contact us using the details below.
+          </p>
+        </section>
 
-        <h2>11) International Transfers</h2>
-        <p>Your information may be processed outside your country. When we transfer data internationally, we use appropriate safeguards as required by law.</p>
+        <section class="section">
+          <h2>11) International Transfers</h2>
+          <p>Your information may be processed outside your country. When we transfer data internationally, we use appropriate safeguards as required by law.</p>
+        </section>
 
-        <h2>12) Changes to This Policy</h2>
-        <p>We may update this Policy from time to time. The updated version will be posted here with a new “Last updated” date.</p>
+        <section class="section">
+          <h2>12) Changes to This Policy</h2>
+          <p>We may update this Policy from time to time. The updated version will be posted here with a new “Last updated” date.</p>
+        </section>
 
-        <h2>13) Contact Us</h2>
-        <p>Email: <a href="mailto:contact@gamedevarena.com">contact@gamedevarena.com</a><br />
-           Website: <a href="https://www.gamedevarena.com">www.gamedevarena.com</a></p>
+        <section class="section">
+          <h2>13) Contact Us</h2>
+          <p>
+            Email: <a href="mailto:contact@gamedevarena.com">contact@gamedevarena.com</a><br />
+            Website: <a href="https://www.gamedevarena.com">www.gamedevarena.com</a>
+          </p>
 
-        <p class="note">Tip: Replace the contact details above with your actual email/URL. If you use additional ad partners (e.g., Unity Ads), add them in Section 3.</p>
+          <p class="note">
+            Tip: Replace the contact details above with your actual email/URL. If you use additional ad partners (e.g., Unity Ads), add them in Section 3.
+          </p>
+        </section>
       </div>
     </main>
 
     <footer>
       <div class="wrap">
-        <small>&copy; {new Date().getFullYear()} GameDev Arena</small>
+        <small>&copy; {year} GameDev Arena</small>
       </div>
     </footer>
   </body>
