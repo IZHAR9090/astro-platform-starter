@@ -33,10 +33,18 @@ const meta = {
         </h1>
 
         {meta.image && (
-          <div class="mt-6 overflow-hidden rounded-2xl ring-1 ring-white/10">
-            <img src={meta.image} alt={meta.title} class="w-full h-auto object-cover" />
-          </div>
-        )}
+  <div class="mt-6 overflow-hidden rounded-2xl ring-1 ring-white/10">
+    <img 
+      src={meta.image} 
+      alt={meta.title} 
+      width="1200" 
+      height="500"
+      class="w-full h-[500px] object-cover rounded-2xl" 
+      loading="eager"
+    />
+  </div>
+)}
+
       </div>
     </div>
   </section>
