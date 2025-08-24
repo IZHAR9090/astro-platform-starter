@@ -1,0 +1,67 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const meta = {
+  title: "Is Hyper-Casual Gaming Dead in 2025?",
+  description: "A deep dive into the state of hyper-casual games in 2025 — are they dead or evolving into hybrid models?",
+  date: "2025-08-25",
+  category: "Industry Insight",
+  image: "/images/blogs/hypercasual.jpg"
+};
+---
+
+<Layout title={meta.title}>
+  <!-- ===== Hero ===== -->
+  <section class="py-12 lg:py-16 px-6 sm:px-12 text-center">
+    <h1 class="text-4xl sm:text-5xl font-extrabold text-gradient mb-6">{meta.title}</h1>
+    <p class="text-gray-400 text-sm">
+      {meta.date} · {meta.category}
+    </p>
+    <img src={meta.image} alt={meta.title} class="mt-8 mx-auto max-h-96 rounded-2xl shadow-lg" />
+  </section>
+
+  <!-- ===== Blog Content ===== -->
+  <section class="prose prose-invert prose-lg px-6 sm:px-12 pb-20 max-w-3xl mx-auto">
+    <p>
+      Hyper-casual games once dominated the mobile charts with their simple mechanics, addictive
+      gameplay, and ad-driven monetization. But as we move deeper into 2025, many developers and
+      publishers are asking the same question: <strong>Is hyper-casual gaming finally dead?</strong>
+    </p>
+
+    <h2>The Rise and Saturation</h2>
+    <p>
+      Between 2015 and 2020, hyper-casual titles became the top downloaded category on mobile stores.
+      However, by 2023–2024 the market was oversaturated with clones, leading to user fatigue and
+      falling retention.
+    </p>
+
+    <h2>The State of Hyper-Casual in 2025</h2>
+    <ul>
+      <li><strong>Installs declining:</strong> Downloads have dropped ~20% since 2022.</li>
+      <li><strong>Ad revenue weaker:</strong> CPMs are down due to ad fatigue.</li>
+      <li><strong>Players want more depth:</strong> Users now expect progression and hybrid systems.</li>
+    </ul>
+
+    <h2>Why It Isn’t Dead Yet</h2>
+    <p>
+      Hyper-casual still accounts for around 15–20% of all mobile installs. Low development cost and
+      viral potential keep it alive — especially in emerging markets.
+    </p>
+
+    <h2>The Evolution: Hybrid-Casual</h2>
+    <p>
+      The real shift is towards hybrid-casual: simple mechanics combined with meta-progression and
+      monetization beyond ads. This evolution keeps the genre relevant.
+    </p>
+
+    <h2>Final Verdict</h2>
+    <p>
+      Hyper-casual isn’t dead — it’s evolving. For developers, cloning old hits won’t work anymore.
+      But innovation, hybrid monetization, and retention features can still make this genre profitable.
+    </p>
+
+    <blockquote>
+      What do you think? Is hyper-casual still worth developing in 2025, or should indie devs move on to hybrid models?
+    </blockquote>
+  </section>
+</Layout>
