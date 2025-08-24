@@ -1,0 +1,73 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+// ✅ Example blog posts (ye data aap CMS ya markdown files se bhi laa sakte ho)
+const blogs = [
+  {
+    title: "Is Hyper-Casual Gaming Dead in 2025?",
+    category: "Industry Insight",
+    excerpt: "A deep dive into the state of hyper-casual games in 2025 — are they really dead or evolving into something new?",
+    image: "/images/blogs/hypercasual.jpg",
+    url: "/blogs/is-hyper-casual-dead-2025"
+  },
+  {
+    title: "How to Integrate AdMob in Unity (Step by Step)",
+    category: "Tutorials",
+    excerpt: "A complete guide on adding AdMob SDK to your Unity project with rewarded, interstitial, and banner ads.",
+    image: "/images/blogs/admob.jpg",
+    url: "/blogs/integrate-admob-unity"
+  },
+  {
+    title: "Best Free Assets for Unity Developers",
+    category: "Resources",
+    excerpt: "Save time with these top free assets every Unity developer should know about.",
+    image: "/images/blogs/assets.jpg",
+    url: "/blogs/free-unity-assets"
+  },
+  {
+    title: "My Journey as an Indie Game Developer",
+    category: "Personal",
+    excerpt: "From starting as a beginner to publishing my first game, here’s what I learned along the way.",
+    image: "/images/blogs/journey.jpg",
+    url: "/blogs/indie-dev-journey"
+  },
+];
+---
+
+<Layout title="Blogs">
+  <!-- ===== Hero ===== -->
+  <section class="py-12 lg:py-16 px-6 sm:px-12 text-center">
+    <h1 class="text-5xl font-extrabold text-gradient mb-10">Blogs</h1>
+    <p class="text-lg text-gray-300 max-w-3xl mx-auto">
+      Insights, tutorials, and stories from my journey as a game developer.  
+      Explore different categories — from industry news to hands-on guides.
+    </p>
+  </section>
+
+  <!-- ===== Blog Grid ===== -->
+  <section class="px-6 sm:px-12 pb-20">
+    <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+      {blogs.map((blog) => (
+        <a href={blog.url}
+           class="group relative overflow-hidden rounded-2xl border border-white/10 bg-gray-900 shadow-lg hover:border-fuchsia-400/40 hover:shadow-fuchsia-500/20 transition no-underline">
+          
+          <!-- Thumbnail -->
+          <div class="relative h-44 w-full overflow-hidden">
+            <img src={blog.image} alt={blog.title} loading="lazy"
+                 class="h-full w-full object-cover group-hover:scale-105 transition" />
+            <span class="absolute top-3 left-3 text-xs px-3 py-1 rounded-full bg-black/50 text-white/80 ring-1 ring-white/10">
+              {blog.category}
+            </span>
+          </div>
+
+          <!-- Content -->
+          <div class="p-6">
+            <h3 class="text-xl font-semibold text-white mb-2 group-hover:text-fuchsia-300">{blog.title}</h3>
+            <p class="text-sm text-gray-400">{blog.excerpt}</p>
+            <div class="mt-4 text-fuchsia-300 text-sm font-medium group-hover:underline">Read more →</div>
+          </div>
+        </a>
+      ))}
+    </div>
+  </section>
+</Layout>
