@@ -3,23 +3,20 @@ import Layout from '../../layouts/Layout.astro';
 
 const meta = {
   title: "Is Hyper-Casual Gaming Dead in 2025?",
-  description: "A deep dive into the state of hyper-casual games in 2025 — are they dead or evolving into hybrid models? Explore trends, challenges, and developer insights.",
+  description: "A deep dive into hyper-casual games in 2025 — are they dead or evolving into hybrid models? Trends, challenges, and developer insights.",
   date: "2025-08-25",
   category: "Industry Insight",
-  image: "/images/blogs/hypercasual.jpg", // ✅ put image in /public/images/blogs/
+  image: "/images/blogs/hypercasual-wide.jpg", // ✅ add landscape image in /public/images/blogs/
 };
 ---
 
 <Layout title={meta.title}>
   <!-- ===== HERO ===== -->
-  <section class="px-6 sm:px-12 pt-10 pb-8">
-    <div
-      class="relative mx-auto max-w-5xl overflow-hidden rounded-3xl border border-white/10
-             bg-gradient-to-br from-gray-900 via-gray-900/70 to-gray-900 shadow-xl"
-    >
-      <div class="pointer-events-none absolute -inset-1 rounded-3xl bg-gradient-to-r from-fuchsia-500/20 via-blue-500/20 to-cyan-400/20 blur-2xl"></div>
+  <section class="pt-8">
+    <div class="relative w-full overflow-hidden border-y border-white/10 bg-gradient-to-br from-gray-900 via-gray-900/70 to-gray-900">
+      <div class="pointer-events-none absolute -inset-1 bg-gradient-to-r from-fuchsia-500/20 via-blue-500/20 to-cyan-400/20 blur-2xl"></div>
 
-      <div class="relative p-8 sm:p-12">
+      <div class="relative max-w-6xl mx-auto px-6 sm:px-12 py-12">
         <div class="flex flex-wrap items-center gap-3">
           <span class="px-3 py-1 text-xs font-semibold rounded-full bg-white/5 ring-1 ring-white/10 text-white/80">
             {meta.category}
@@ -28,97 +25,133 @@ const meta = {
             {meta.date}
           </span>
           <span class="hidden sm:inline-block text-white/30">•</span>
-          <span class="text-xs text-white/60 hidden sm:inline-block">~8 min read</span>
+          <span class="text-xs text-white/60 hidden sm:inline-block">~12 min read</span>
         </div>
 
         <h1 class="mt-4 text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
           {meta.title}
         </h1>
 
-        <div class="mt-6 overflow-hidden rounded-2xl ring-1 ring-white/10 bg-black/20">
-          <img src={meta.image} alt={meta.title} class="w-full h-auto object-cover" />
-        </div>
+        {meta.image && (
+          <div class="mt-6 overflow-hidden rounded-2xl ring-1 ring-white/10">
+            <img src={meta.image} alt={meta.title} class="w-full h-auto object-cover" />
+          </div>
+        )}
       </div>
     </div>
   </section>
 
-  <!-- ===== CONTENT ===== -->
-  <section class="px-6 sm:px-12 pb-20">
-    <article class="mx-auto max-w-3xl">
+  <!-- ===== ARTICLE ===== -->
+  <section class="px-6 sm:px-12 py-16 bg-gradient-to-b from-gray-950 via-gray-900 to-gray-950">
+    <article class="mx-auto max-w-4xl">
       <div class="[&_p]:text-gray-300 [&_p]:leading-7 [&_p]:mt-5
-                  [&_h2]:text-2xl [&_h2]:sm:text-3xl [&_h2]:font-extrabold [&_h2]:mt-10 [&_h2]:text-white
+                  [&_h2]:text-2xl [&_h2]:sm:text-3xl [&_h2]:font-extrabold [&_h2]:mt-12 [&_h2]:text-white
                   [&_h3]:text-xl [&_h3]:font-semibold [&_h3]:mt-6 [&_h3]:text-fuchsia-300
                   [&_ul]:list-disc [&_ul]:pl-6 [&_li]:mt-2
-                  [&_strong]:text-white [&_blockquote]:italic [&_blockquote]:text-fuchsia-300 [&_a]:text-cyan-300 hover:[&_a]:underline">
+                  [&_strong]:text-white [&_blockquote]:italic [&_blockquote]:text-fuchsia-300">
 
+        <h2>Introduction: The Death or Transformation of a Genre?</h2>
         <p>
-          Hyper-casual games once ruled the mobile gaming charts. Their addictive one-tap mechanics,
-          endless runners, and simple puzzles attracted millions of players worldwide. But as we step into
-          <strong>2025</strong>, the big question on every developer’s mind is:
-          <strong> Is hyper-casual gaming finally dead?</strong>
+          In 2018–2020, hyper-casual gaming exploded. These games—defined by one-tap mechanics,
+          minimalist design, and snack-sized play—dominated app stores. Titles like Flappy Bird,
+          Helix Jump, and Aquapark.io attracted millions of downloads, thanks to addictive gameplay
+          and low development costs.
+        </p>
+        <p>
+          Fast forward to 2025, and many ask: <strong>Is hyper-casual gaming dead?</strong><br/>
+          The short answer: <strong>No.</strong> Hyper-casual is not dead—it’s evolving. The market has matured,
+          monetization is harder, but innovation is pushing the genre into new forms like
+          hybrid-casual, AI-driven personalization, and social play.
         </p>
 
-        <h2>The Golden Age of Hyper-Casual</h2>
-        <p>
-          Between 2015 and 2020, hyper-casual games were unstoppable. Developers could create
-          prototypes in weeks, publish quickly, and generate millions of downloads through ad networks.
-          Their <strong>low barrier to entry</strong> and <strong>ad-based monetization</strong> model
-          made them extremely attractive for indie teams.
-        </p>
-
-        <h2>The Decline (2022–2024)</h2>
+        <h2>1. The Rise of Hyper-Casual: A Quick Recap</h2>
         <ul>
-          <li><strong>Over-saturation:</strong> App stores flooded with clones and copycats.</li>
-          <li><strong>User fatigue:</strong> Players grew tired of repetitive mechanics.</li>
-          <li><strong>Falling ad revenues:</strong> Ad CPMs dropped due to ad fatigue.</li>
-          <li><strong>Store restrictions:</strong> Stricter rules against low-quality titles.</li>
+          <li>Simple mechanics → one-tap or swipe, easy for anyone to play.</li>
+          <li>Low device requirements → ran smoothly on cheap smartphones.</li>
+          <li>Ad-based monetization → rewarded ads and interstitial ads drove revenue.</li>
+          <li>Mass downloads → publishers like Voodoo, Ketchapp, and Lion Studios flooded stores.</li>
         </ul>
         <p>
-          These factors led many developers to believe the genre was on its last breath.
+          For years, hyper-casual dominated Google Play and App Store charts, but cracks started
+          showing around 2022–2023.
         </p>
 
-        <h2>The State of Hyper-Casual in 2025</h2>
+        <h2>2. Challenges That Shook the Genre</h2>
+        <h3>User Acquisition Costs (UAC) Skyrocketed</h3>
+        <p>After Apple’s IDFA privacy changes, targeting became less precise. CPI increased, making ad-only games less profitable.</p>
+
+        <h3>Ad Fatigue & Lower CPMs</h3>
+        <p>Players became desensitized to repetitive ads. Developers in 2025 report ~20% lower CPM than 2023.</p>
+
+        <h3>Short Lifecycles</h3>
+        <p>Many hyper-casual hits peak in weeks and then vanish. Studios had to produce games at factory speed.</p>
+
+        <h3>Retention Problems</h3>
+        <p>Day-7 retention was abysmally low (5–10%). Without IAP or progression, players churn quickly.</p>
+
+        <h2>3. The Shift: From Hyper-Casual to Hybrid-Casual</h2>
         <p>
-          Despite the decline, hyper-casual games still account for <strong>15–20% of global mobile installs</strong>.
-          Especially in emerging markets, their simplicity makes them the first step for new gamers.
+          The most important evolution in 2025 is the <strong>Hybrid-Casual</strong> model:
         </p>
+        <ul>
+          <li>Core = hyper-casual gameplay.</li>
+          <li>Added features = meta progression, upgrades, light monetization.</li>
+          <li>Monetization = ads + IAP.</li>
+        </ul>
+        <p>
+          Data shows hybrid-casual downloads grew 3.4% YoY, while IAP revenue rose 37% (Mistplay 2025 Report).
+        </p>
+        <blockquote>Takeaway: Hyper-casual isn’t dead—it’s blending with casual and mid-core to stay sustainable.</blockquote>
+
+        <h2>4. How Developers Are Innovating in 2025</h2>
+        <ul>
+          <li>✅ <strong>AI-Driven Personalization</strong>: dynamic difficulty, procedural levels, optimized ads.</li>
+          <li>✅ <strong>Improved Visuals & UX</strong>: polished animations, vibrant colors, micro-interactions.</li>
+          <li>✅ <strong>Playable Ads 2.0</strong>: ads as mini-games to improve installs & retention.</li>
+          <li>✅ <strong>Social & Multiplayer</strong>: leaderboards, PvP, co-op challenges.</li>
+          <li>✅ <strong>AR & Cross-Platform</strong>: AR mechanics, cloud saves, device switching.</li>
+        </ul>
+
+        <h2>5. The Global Picture: Where Hyper-Casual Still Wins</h2>
+        <p>Even in 2025, hyper-casual thrives in:</p>
+        <ul>
+          <li>Emerging markets (India, Brazil, SEA): lightweight games fit low-end devices.</li>
+          <li>App Store charts: 50% of top free Google Play games mid-2025 were hyper-casual.</li>
+          <li>ASMR-style & stress-relief niches remain evergreen.</li>
+        </ul>
+
+        <h2>6. What Developers Are Saying in 2025</h2>
+        <p>On Reddit and gamedev forums, feedback is mixed:</p>
         <blockquote>
-          “Hyper-casual isn’t dead — but it’s no longer the gold rush it used to be.”
+          “I survive on ad revenue. 2025 has been giving me 20% lower CPM … good fill rate is harder
+          to get now.” – Indie dev on Reddit
         </blockquote>
 
-        <h2>The Shift to Hybrid-Casual</h2>
+        <h2>7. The Future: Dead or Redefined?</h2>
         <p>
-          The biggest evolution is towards <strong>Hybrid-Casual</strong> games:
+          ✅ <strong>Not Dead:</strong> still dominates charts, accessible, innovative.<br/>
+          ❌ <strong>Feels Dead:</strong> lower profits, harder UA, short-lived titles.
+        </p>
+        <p>
+          The real answer: hyper-casual in 2025 is not dead—it’s <strong>redesigned</strong>.
+          The “ad farm” era is gone, but simplicity and accessibility remain key pillars.
+        </p>
+
+        <h2>Conclusion: The Next Chapter of Hyper-Casual</h2>
+        <p>
+          In 2025, hyper-casual is at a crossroads. The old formula of
+          “launch simple game + monetize with ads” is no longer enough. Developers must adapt with:
         </p>
         <ul>
-          <li>Simple, accessible gameplay (hyper-casual core loop).</li>
-          <li>Progression systems (levels, upgrades, unlocks).</li>
-          <li>Mixed monetization (ads + in-app purchases).</li>
+          <li>Hybrid mechanics for retention & monetization.</li>
+          <li>AI tools for personalization & smarter design.</li>
+          <li>Global strategies for emerging markets.</li>
+          <li>Playable ads & social features for user stickiness.</li>
         </ul>
         <p>
-          This blend gives players short-term fun <em>and</em> long-term engagement — a win-win for
-          developers and users.
+          👉 <strong>So, is hyper-casual gaming dead in 2025?</strong><br/>
+          No. It’s evolving into a stronger, smarter, more sustainable model.
         </p>
-
-        <h2>Strategies for Developers in 2025</h2>
-        <ul>
-          <li><strong>Innovate:</strong> Add unique mechanics instead of cloning old hits.</li>
-          <li><strong>Focus on retention:</strong> Missions, leaderboards, and customization features keep players hooked.</li>
-          <li><strong>Hybrid monetization:</strong> Combine ads with IAPs for sustainability.</li>
-          <li><strong>Strong creatives:</strong> Ad campaigns now require polished gameplay trailers, not just static banners.</li>
-        </ul>
-
-        <h2>Final Verdict</h2>
-        <p>
-          So, is hyper-casual gaming dead in 2025? The answer is <strong>no</strong> — but it has
-          <strong>transformed</strong>. The quick-buck, copy-paste model is gone. What remains is a
-          space for innovative, polished, hybrid experiences that combine the best of accessibility and depth.
-        </p>
-
-        <blockquote>
-          For indie developers, hyper-casual is still a great way to learn fast prototyping and publishing —
-          but long-term success now requires <strong>hybrid thinking</strong>.
-        </blockquote>
       </div>
     </article>
   </section>
