@@ -1,69 +1,115 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import BlogPostShell from '../../components/BlogPostShell.astro';
 
 const meta = {
   title: "Best Free Assets for Unity Game Developers (2025)",
   description: "A curated list of the best free assets for Unity developers in 2025 — art, audio, tools, and code libraries to speed up production.",
   date: "2025-08-25",
   category: "Unity Resources",
-  image: "/images/blogs/unity-assets-2025.png", // put this in /public/images/blogs/
+  image: "/images/blogs/unity-assets-2025.png", // ✅ add to /public/images/blogs/
 };
 ---
 
-<Layout title={meta.title} description={meta.description}>
-  <BlogPostShell meta={meta}>
-    <p>
-      When you’re starting out in game development, assets can make or break your project. Buying premium assets is great, but not everyone has the budget in the early stages. Luckily, Unity’s Asset Store and other sources offer a wide range of free assets that can speed up development, enhance visuals, and improve gameplay without costing you a dime.
-    </p>
+<Layout title={meta.title}>
+  <!-- ===== HERO ===== -->
+  <section class="pt-8">
+    <div class="relative w-full overflow-hidden border-y border-white/10 bg-gradient-to-br from-gray-900 via-gray-900/70 to-gray-900">
+      <div class="pointer-events-none absolute -inset-1 bg-gradient-to-r from-fuchsia-500/20 via-blue-500/20 to-cyan-400/20 blur-2xl"></div>
 
-    <p>
-      In this article, we’ll explore some of the best free Unity assets for game developers in 2025 — covering graphics, sound, tools, and code libraries.
-    </p>
+      <div class="relative max-w-6xl mx-auto px-6 sm:px-12 py-12">
+        <div class="flex flex-wrap items-center gap-3">
+          <span class="px-3 py-1 text-xs font-semibold rounded-full bg-white/5 ring-1 ring-white/10 text-white/80">
+            {meta.category}
+          </span>
+          <span class="px-3 py-1 text-xs rounded-full bg-white/5 ring-1 ring-white/10 text-white/60">
+            {meta.date}
+          </span>
+          <span class="hidden sm:inline-block text-white/30">•</span>
+          <span class="text-xs text-white/60 hidden sm:inline-block">~10 min read</span>
+        </div>
 
-    <h2>🎨 1. Free 2D & 3D Art Assets</h2>
-    <ul>
-      <li><strong>Kenney Assets (2D & 3D Packs)</strong> — legendary free sprites, UI, and low-poly 3D models. 🔗 <a href="https://kenney.nl/assets" target="_blank" rel="noopener">Kenney.nl</a> and Unity Asset Store.</li>
-      <li><strong>Polygon Starter Pack (Synty Studios)</strong> — stylized low-poly starter pack for RPGs, shooters, open-worlds.</li>
-      <li><strong>Unity Starter Assets (FPS & TPS)</strong> — character controllers, animations, and camera setups.</li>
-    </ul>
+        <h1 class="mt-4 text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
+          {meta.title}
+        </h1>
 
-    <h2>🎧 2. Free Audio Assets</h2>
-    <ul>
-      <li><strong>Sonniss GDC Audio Packs</strong> — huge free packs of professional SFX released annually during GDC.</li>
-      <li><strong>Freesound.org</strong> — community-driven SFX and music (check licenses for commercial use).</li>
-      <li><strong>Chiptone</strong> — retro SFX generator by SFB Games; perfect for pixel/arcade projects.</li>
-    </ul>
+        {meta.image && (
+          <div class="mt-6 overflow-hidden rounded-2xl ring-1 ring-white/10">
+            <img 
+              src={meta.image} 
+              alt={meta.title} 
+              width="1200" 
+              height="500"
+              class="w-full h-[500px] object-cover rounded-2xl" 
+              loading="eager"
+            />
+          </div>
+        )}
+      </div>
+    </div>
+  </section>
 
-    <h2>⚙️ 3. Free Tools & Frameworks</h2>
-    <ul>
-      <li><strong>Cinemachine</strong> — dynamic cameras for 2D/3D.</li>
-      <li><strong>Post Processing Stack</strong> — bloom, color grading, motion blur, etc.</li>
-      <li><strong>DOTween</strong> — ultra-fast tweening for UI, movement, and transitions.</li>
-      <li><strong>TextMeshPro</strong> — standard for crisp, flexible text rendering.</li>
-    </ul>
+  <!-- ===== ARTICLE ===== -->
+  <section class="px-6 sm:px-12 py-16 bg-gradient-to-b from-gray-950 via-gray-900 to-gray-950">
+    <article class="mx-auto max-w-4xl">
+      <div class="[&_p]:text-gray-300 [&_p]:leading-7 [&_p]:mt-5
+                  [&_h2]:text-2xl [&_h2]:sm:text-3xl [&_h2]:font-extrabold [&_h2]:mt-12 [&_h2]:text-white
+                  [&_h3]:text-xl [&_h3]:font-semibold [&_h3]:mt-6 [&_h3]:text-fuchsia-300
+                  [&_ul]:list-disc [&_ul]:pl-6 [&_li]:mt-2
+                  [&_strong]:text-white [&_blockquote]:italic [&_blockquote]:text-fuchsia-300">
 
-    <h2>👾 4. Free Code & Gameplay Systems</h2>
-    <ul>
-      <li><strong>Dialogue Systems (free alternatives)</strong> — e.g., Yarn Spinner for branching dialogues.</li>
-      <li><strong>Lean Touch</strong> — pinch/zoom/drag/swipe made easy for mobile.</li>
-      <li><strong>Inventory Systems</strong> — open-source templates on GitHub/Asset Store.</li>
-    </ul>
+        <p>
+          When you’re starting out in game development, assets can make or break your project. Buying premium assets is great, but not everyone has the budget in the early stages. Luckily, Unity’s Asset Store and other sources offer a wide range of free assets that can speed up development, enhance visuals, and improve gameplay without costing you a dime.
+        </p>
 
-    <h2>🛠️ 5. Bonus: Where to Find More Free Unity Assets</h2>
-    <ul>
-      <li><a href="https://itch.io/game-assets/free" target="_blank" rel="noopener">Itch.io — Free Assets</a></li>
-      <li><a href="https://opengameart.org" target="_blank" rel="noopener">OpenGameArt.org</a></li>
-      <li><a href="https://github.com/topics/unity" target="_blank" rel="noopener">GitHub — Unity Open Source</a></li>
-      <li>Developer forums & Discord communities</li>
-    </ul>
+        <p>
+          In this article, we’ll explore some of the best free Unity assets for game developers in 2025 — covering graphics, sound, tools, and code libraries.
+        </p>
 
-    <h2>✅ Final Thoughts</h2>
-    <p>
-      Free Unity assets can save you time, money, and stress when building your game. For beginners, start with Kenney Assets, Unity Starter Packs, and Cinemachine. As your project grows, explore specialized tools like DOTween and Lean Touch to polish your gameplay.
-    </p>
-    <p>
-      Remember: free assets are great for learning and prototyping — but customizing them will make your game stand out.
-    </p>
-  </BlogPostShell>
+        <h2>🎨 1. Free 2D & 3D Art Assets</h2>
+        <ul>
+          <li><strong>Kenney Assets (2D & 3D Packs)</strong> — legendary free sprites, UI packs, and low-poly 3D models. 🔗 <a href="https://kenney.nl/assets" target="_blank">Kenney.nl</a> + Unity Asset Store.</li>
+          <li><strong>Polygon Starter Pack (Synty Studios)</strong> — stylized low-poly starter pack, perfect for RPGs or shooters.</li>
+          <li><strong>Unity Starter Assets (FPS & TPS)</strong> — ready-made character controllers, animations, and cameras.</li>
+        </ul>
+
+        <h2>🎧 2. Free Audio Assets</h2>
+        <ul>
+          <li><strong>Sonniss GDC Audio Packs</strong> — massive free SFX packs released annually during GDC.</li>
+          <li><strong>Freesound.org</strong> — community-driven sound effects (check licenses).</li>
+          <li><strong>Chiptone</strong> — retro SFX generator, perfect for pixel/arcade projects.</li>
+        </ul>
+
+        <h2>⚙️ 3. Free Tools & Frameworks</h2>
+        <ul>
+          <li><strong>Cinemachine</strong> — pro-grade dynamic camera system.</li>
+          <li><strong>Post Processing Stack</strong> — visual effects: bloom, motion blur, color grading.</li>
+          <li><strong>DOTween</strong> — fast tweening for UI and gameplay.</li>
+          <li><strong>TextMeshPro</strong> — Unity’s standard for crisp, flexible text rendering.</li>
+        </ul>
+
+        <h2>👾 4. Free Code & Gameplay Systems</h2>
+        <ul>
+          <li><strong>Dialogue Tools</strong> (like Yarn Spinner) — branching dialogue frameworks.</li>
+          <li><strong>Lean Touch</strong> — mobile touch control system (pinch, zoom, swipe).</li>
+          <li><strong>Inventory Systems</strong> — free open-source templates for RPGs/survival games.</li>
+        </ul>
+
+        <h2>🛠️ 5. Bonus: Where to Find More Free Unity Assets</h2>
+        <ul>
+          <li><a href="https://itch.io/game-assets/free" target="_blank">Itch.io Free Assets</a></li>
+          <li><a href="https://opengameart.org" target="_blank">OpenGameArt.org</a></li>
+          <li><a href="https://github.com/topics/unity" target="_blank">GitHub Open Source Unity Projects</a></li>
+          <li>GameDev forums & Discord communities</li>
+        </ul>
+
+        <h2>✅ Final Thoughts</h2>
+        <p>
+          Free Unity assets can save you time, money, and stress when building your game. For beginners, start with Kenney Assets, Unity Starter Packs, and Cinemachine. As your project grows, explore specialized tools like DOTween and Lean Touch to polish your gameplay.
+        </p>
+        <p>
+          Remember: free assets are great for learning and prototyping — but customizing them will make your game stand out.
+        </p>
+      </div>
+    </article>
+  </section>
 </Layout>
